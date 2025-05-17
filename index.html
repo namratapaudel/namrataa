@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Namrata's Ecommerce Site</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-left">
+        <h1>Namrata's Ecommerce Site</h1>
+      </div>
+      <div class="header-center">
+        <input type="text" id="searchInput" placeholder="Search products..." />
+      </div>
+      <div class="header-right">
+        <button id="menu-toggle" aria-label="Toggle menu">&#9776;</button>
+        <nav id="nav-menu">
+          <a href="index.html">Home</a>
+          <div class="dropdown">
+            <a href="#" class="dropbtn">Products ▼</a>
+            <div class="dropdown-content">
+              <a href="#tshirt">T-shirts</a>
+              <a href="#pants">Pants</a>
+              <a href="#jackets">Jackets</a>
+            </div>
+          </div>
+          <a href="#cart">Cart</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="product-list"></main>
+
+    <footer>
+      <p>© 2025 Namrata's Ecommerce Site. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+      const menuToggle = document.getElementById("menu-toggle");
+      const navMenu = document.getElementById("nav-menu");
+
+      menuToggle.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
+      });
+    </script>
+  </body>
+</html>
