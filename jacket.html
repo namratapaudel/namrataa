@@ -1,10 +1,9 @@
-<!-- === FILE: index.html === -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Namrata's Ecommerce Site</title>
+    <title>Watch - Namrata's Ecommerce Site</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -19,8 +18,8 @@
         <button id="menu-toggle" aria-label="Toggle menu">&#9776;</button>
         <nav id="nav-menu">
           <a href="index.html">Home</a>
-          <a href="login.html">Login</a>
-          <a href="signup.html">Signup</a>
+          <a href="index.html">Login</a>
+          <a href="index.html">Signup</a>
           <div class="dropdown">
             <a href="#" class="dropbtn">Products ▼</a>
             <div class="dropdown-content">
@@ -28,24 +27,16 @@
               <a href="pants.html">Pants</a>
               <a href="watch.html">Watch</a>
               <a href="jacket.html">Jacket</a>
-              <a href="shoes.html">Shoes</a>
-
-              <a href="slippers.html">Slippers</a>
-
-              <a href="dress.html">Dress</a>
             </div>
           </div>
-          <a href="cart.html">Cart</a>
+          <a href="#cart">Cart</a>
         </nav>
       </div>
     </header>
-
     <main id="product-list"></main>
-
     <footer>
       <p>© 2025 Namrata's Ecommerce Site. All rights reserved.</p>
     </footer>
-
     <script src="script.js"></script>
     <script>
       const menuToggle = document.getElementById("menu-toggle");
@@ -53,21 +44,8 @@
       menuToggle.addEventListener("click", () => {
         navMenu.classList.toggle("active");
       });
-
-      if (
-        window.location.pathname.includes("index.html") ||
-        window.location.pathname === "/"
-      ) {
-        displayProducts(products);
-        const searchInput = document.getElementById("searchInput");
-        searchInput.addEventListener("input", function () {
-          const searchTerm = searchInput.value.toLowerCase();
-          const filtered = products.filter((product) =>
-            product.name.toLowerCase().includes(searchTerm)
-          );
-          displayProducts(filtered);
-        });
-      }
+      const filtered = products.filter((p) => p.category === "Jacket");
+      displayProducts(filtered);
     </script>
   </body>
 </html>
